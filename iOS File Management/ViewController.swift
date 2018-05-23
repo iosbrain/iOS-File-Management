@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let file = AppFile(fileName: "iOS file management in Swift 4.txt")
+        //let file = AppFile(fileName: "iOS file management in Swift 4.txt")
         //file.write()
         //file.deleteTempFile()
         //file.rename()
@@ -33,12 +33,17 @@ class ViewController: UIViewController {
         //file.write()
         //let exists = file.doesExist()
         //print("karma.txt: \(exists)")
-        file.getAttribs()
+        //file.getAttribs()
         //file.changeExtension()
         //file.move()
         //file.delete()
-        print()
-        file.list()
+        //print()
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
+            let file = AppFile()
+            _ = file.writeFile(containing: "This file was written for my tutorial on the iOS 11 Files app.\n\nThe text file was written to this app\'s Documents folder.", to: .Documents, withName: "textFile1.txt")
+            _ = file.list()
+            print("file written...")
+        //}
         //print()
         //print(file.getURL(for: .Temp))
     }

@@ -272,6 +272,11 @@ struct AppFile : AppFileManipulation, AppFileStatusChecking, AppFileSystemMetaDa
     {
         self.fileName = fileName
     }
+    
+    init()
+    {
+        fileName = "N/A"
+    }
   
     func moveToDocuments()
     {
@@ -285,8 +290,9 @@ struct AppFile : AppFileManipulation, AppFileStatusChecking, AppFileSystemMetaDa
     
     func write() -> Bool
     {
-        writeFile(containing: "We were talking\nAbout the space\nBetween us all", to: .Documents, withName: "karma.txt")
-        writeFile(containing: "And the people\nWho hide themselves\nBehind a wall", to: .Documents, withName: "dharma.txt")
+        _ = writeFile(containing: "This file was written on 5/23/18.\n\nThis file should show up in the Files app.", to: .Documents, withName: "myFileApp.txt")
+        //writeFile(containing: "We were talking\nAbout the space\nBetween us all", to: .Documents, withName: "karma.txt")
+        // writeFile(containing: "And the people\nWho hide themselves\nBehind a wall", to: .Documents, withName: "dharma.txt")
         return true
     }
     
